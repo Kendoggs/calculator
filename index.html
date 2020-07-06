@@ -1,7 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>calculator app</title>
-        <script type="module" src="index.js"></script>
-    </head>
+  <head>
+    <link rel="stylesheet" href="./calc.css">
+    <script type="module" defer src="./index.js"></script>
+  </head>
+<body>
+
+  <div class="container">
+    <div class="calculator">
+      <div class="calculator__display" id="result">0</div>
+  
+      <div class="calculator__keys">
+        <button class="key--operator"  onclick="calc.add()">+</button>
+        <button class="key--operator"  onclick="calc.sub()">-</button>
+        <button class="key--operator" onclick="calc.mul()">&times;</button>
+        <button class="key--operator" onclick="calc.div()">&divide;</button>
+        <button onclick="calc.userInput('7')">7</button>
+        <button onclick="calc.userInput('8')">8</button>
+        <button onclick="calc.userInput('9')">9</button>
+        <button onclick="calc.userInput('4')">4</button>
+        <button onclick="calc.userInput('5')">5</button>
+        <button onclick="calc.userInput('6')">6</button>
+        <button onclick="calc.userInput('1')">1</button>
+        <button onclick="calc.userInput('2')">2</button>
+        <button onclick="calc.userInput('3')">3</button>
+        <button onclick="calc.userInput('0')">0</button>
+        <button onclick="calc.userInput('.')">.</button>
+        <button  onclick="calc.clear()">AC</button>
+        <button class="key--equal"  onclick="calc.equals()">=</button>
+      </div>
+    </div>
+  </div>
+
+</body>
 </html>
+

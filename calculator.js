@@ -5,10 +5,13 @@
 export const calc = {
     userinputValues: [],
     operation: [],
+    resolve: "",
     result: 0,
     displayValue: "0",
+    segment: "",
     userInput(input){
         this.userinputValues.push(input);
+        this.displayValue = this.userinputValues.join("");
         console.log(this.userinputValues);
     },
     inputtoDisplay(){
@@ -18,44 +21,63 @@ export const calc = {
         this.userinputValues = [];
     },
     add() {
-        this.inputtoDisplay();
-        segment = this.displayValue + "+";
-        this.operation.push(segment);
-        console.log(this.operation);
-        this.displayValue = 0;
+        if (this.displayValue != "0"){
+            this.inputtoDisplay();
+            this.segment = this.displayValue + "+";
+            this.operation.push(this.segment);
+            console.log(this.operation);
+            this.displayValue = "0";
+            this.segment = "";
+        }
+        
     },
     sub() {
         this.inputtoDisplay();
-        segment = this.displayValue + "-";
-        this.operation.push(segment);
+        this.segment = this.displayValue + "-";
+        this.operation.push(this.segment);
         console.log(this.operation);
-        this.displayValue = 0;
+        this.displayValue = "0";
+        this.segment = "";
+    },
+    div() {
+        this.inputtoDisplay();
+        this.segment = this.displayValue + "/";
+        this.operation.push(this.segment);
+        console.log(this.operation);
+        this.displayValue = "0";
+        this.segment = "";
+    },
+    mul() {
+        this.inputtoDisplay();
+        this.segment = this.displayValue + "*";
+        this.operation.push(this.segment);
+        console.log(this.operation);
+        this.displayValue = "0";
+        this.segment = "";
     },
     equals(){
         this.inputtoDisplay();
-        segment = this.displayValue;
-        this.operation.push(segment);
-        resolve = this.operation.join("");
-        console.log(resolve);
-        test = eval(resolve);
-        console.log(typeof test);
-        this.displayValue = test.toString();
-        console.log(typeof this.displayValue);
+        this.segment = this.displayValue;
+        this.operation.push(this.segment);
+        this.resolve = this.operation.join("");
+        console.log(this.resolve);
+        this.displayValue = eval(this.resolve);
+        this.operation = [];
+        console.log(this.displayValue);
+        // console.log(typeof test);
+        // this.displayValue = test.toString();
+        // console.log(typeof this.displayValue);
     },
     clear(){
         this.userinputValues = [];
         this.operation = [];
+        this.displayValue = "0";
     }
 
   }
 
 
-  calc.userInput("3");
-  calc.userInput("4");
-  calc.add();
-  calc.userInput("5");
-  calc.userInput("4")
-  calc.equals();
+
 
 
 
