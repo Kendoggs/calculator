@@ -4,11 +4,7 @@ window.calc = calc;
 
 window.onclick = function(){
     document.getElementById("result").innerHTML = calc.displayValue;
+    document.getElementById("operation").innerHTML = calc.operation.join("");
 }
 
-calc.userInput("3");
-calc.userInput("4");
-calc.add();
-calc.userInput("5");
-calc.userInput("4")
-calc.equals();
+

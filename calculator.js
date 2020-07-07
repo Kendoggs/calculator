@@ -32,28 +32,34 @@ export const calc = {
         
     },
     sub() {
-        this.inputtoDisplay();
-        this.segment = this.displayValue + "-";
-        this.operation.push(this.segment);
-        console.log(this.operation);
-        this.displayValue = "0";
-        this.segment = "";
+        if (this.displayValue != "0"){
+            this.inputtoDisplay();
+            this.segment = this.displayValue + "-";
+            this.operation.push(this.segment);
+            console.log(this.operation);
+            this.displayValue = "0";
+            this.segment = "";
+        }
     },
     div() {
-        this.inputtoDisplay();
-        this.segment = this.displayValue + "/";
-        this.operation.push(this.segment);
-        console.log(this.operation);
-        this.displayValue = "0";
-        this.segment = "";
+        if (this.displayValue != "0"){
+            this.inputtoDisplay();
+            this.segment = this.displayValue + "/";
+            this.operation.push(this.segment);
+            console.log(this.operation);
+            this.displayValue = "0";
+            this.segment = "";
+        }
     },
     mul() {
-        this.inputtoDisplay();
-        this.segment = this.displayValue + "*";
-        this.operation.push(this.segment);
-        console.log(this.operation);
-        this.displayValue = "0";
-        this.segment = "";
+        if (this.displayValue != "0"){
+            this.inputtoDisplay();
+            this.segment = this.displayValue + "*";
+            this.operation.push(this.segment);
+            console.log(this.operation);
+            this.displayValue = "0";
+            this.segment = "";
+        }
     },
     equals(){
         this.inputtoDisplay();
@@ -62,6 +68,7 @@ export const calc = {
         this.resolve = this.operation.join("");
         console.log(this.resolve);
         this.displayValue = eval(this.resolve);
+        this.userinputValues.push(this.displayValue);
         this.operation = [];
         console.log(this.displayValue);
         // console.log(typeof test);
