@@ -11,8 +11,10 @@ export const calc = {
     segment: "",
     userInput(input){
         this.userinputValues.push(input);
-        this.displayValue = this.userinputValues.join("");
-        console.log(this.userinputValues);
+        if !((input == ".") && this.userinputValues.endWith(".")) {
+            this.displayValue = this.userinputValues.join("");
+        }
+            console.log(this.userinputValues);
     },
     inputtoDisplay(){
         console.log(this.userinputValues);
