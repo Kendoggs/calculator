@@ -1,3 +1,3 @@
-# calculator
+# Calculator
 
-Basic implamentation of a javascript based calculator
+Basic implementation of a javascript based calculator.
