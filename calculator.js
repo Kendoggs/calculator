@@ -10,9 +10,15 @@ export const calc = {
     displayValue: "0",
     segment: "",
     userInput(input){
-        this.userinputValues.push(input);
-        this.displayValue = this.userinputValues.join("");
-        console.log(this.userinputValues);
+        if ((input === ".") && (this.userinputValues.length == 0)) {
+            this.userinputValues.push("0", input);
+            this.displayValue = this.userinputValues.join("");
+        }
+        if (!((input === ".") && this.userinputValues.includes("."))) {
+            this.userinputValues.push(input);
+            this.displayValue = this.userinputValues.join("");
+        }
+            console.log(this.userinputValues);
     },
     inputtoDisplay(){
         console.log(this.userinputValues);
